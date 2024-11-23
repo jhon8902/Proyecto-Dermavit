@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>DermaVit</title>
+    <link rel="stylesheet" href="style.css"/>
+   
+    
+    <!-- Incluir Bootstrap CSS desde CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+  <body>
+  <!-- Encabezado -->
+   
+<header>
+  
+  <!-- Menú Hamburguesa -->
+  <div class="hamburger-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="menu-container">
+    <h1>
+      DermaVit
+      <span>Estética By Jhon Garcia</span>
+    </h1>
+    
+    <div class="header-line"></div>
+    
+  </div>
+
+<!-- Añade un id a la sección de inicio -->
+<div id="inicio">
+  <!-- Contenido de inicio -->
+</div>
+
+<!-- Icono de Home -->
+<a href="#inicio" class="scroll-to-top">
+  &#x1F3E0; <!-- Emoji de casa como ejemplo -->
+</a>
+
+<!-- Menú de navegación -->
+<nav id="nav" class="nav-menu">
+  <ul>
+    <li><a href="#historia" id="historia-btn">Historia</a></li>
+    <li><a href="#medicina">Medicina</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#productos">Productos</a></li>
+    <li><a href="#blog">Blog</a></li>
+  </ul>
+</nav>
+
+
+</header>
+
+
+<!-- Carrusel -->
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img/piel1.jpeg" class="d-block w-100" alt="img5" />
+    </div>
+    <div class="carousel-item">
+      <img src="img/piel.png" class="d-block w-100" alt="img 2" />
+    </div>
+    <div class="carousel-item">
+      <img src="img/piel6.jpeg" class="d-block w-100" alt="img 3" />
+    </div>
+  </div>
+</div>
+
+<!-- Nuevo div para los textos -->
+<div class="contenedor-textos">
+  <h5 class="titulo">Soluciones para tu piel</h5>
+  <p class="descripcion">En Dermavit, comprendemos tus necesidades,
+    Nuestro equipo de expertos está listo para ayudarte a lograr
+    una piel saludable y radiante.
+    ¡Transforma tu piel con nosotros hoy mismo!</p>
+
+  <div class="botones">
+    <!-- Botón para abrir el formulario de citas -->
+    <button class="btn btn-primary btn-lg" onclick="abrirFormularioCita()">Pide tu Cita</button>
+
+    <!-- Botón para mostrar número de contacto y hacer llamada -->
+    <button class="btn btn-secondary btn-lg" onclick="mostrarContacto()">Contáctanos</button>
+  </div>
+</div>
+
+<!-- Modal para el formulario de pedir cita -->
+<div id="modalCita" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close" onclick="cerrarModalCita()">&times;</span>
+    <h2>Pedir Cita</h2>
+    <form id="formCita">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required><br><br>
+
+      <label for="fecha">Fecha de la Cita:</label>
+      <input type="date" id="fecha" name="fecha" required><br><br>
+
+      <label for="hora">Hora de la Cita:</label>
+      <input type="time" id="hora" name="hora" required><br><br>
+
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" required><br><br>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</div>
+
+<!-- Div para mostrar el número de contacto -->
+<div id="contactoInfo" style="display:none;">
+  <span class="close" onclick="cerrarContacto()">&times;</span>
+  <p>Llame a este número:</p>
+  <a href="tel: 57+3507106842"><i class="fa fa-phone"></i> 3507106842</a>
+</div>
+
+
+<!-- Sección de contenido para la Historia -->
+<div id="historia-content" class="content-section">
+  <h2>Nuestra Historia</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-content left">
+        <h3>1995</h3>
+        <p>En 1995, nuestra empresa comenzó como un pequeño negocio familiar. A lo largo de los años, hemos crecido hasta convertirnos en un líder en la industria...</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-content right">
+        <h3>1998</h3>
+        <p>Con el esfuerzo y la dedicación de nuestros fundadores, nos expandimos a nivel nacional, brindando servicios de calidad a millones de personas.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-content left">
+        <h3>2002</h3>
+        <p>Nuestro continuo compromiso con la innovación nos permitió lanzar nuevos productos que revolucionaron la industria.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-content right">
+        <h3>2005</h3>
+        <p>Nuestro continuo compromiso con la innovación nos permitió lanzar nuevos productos que revolucionaron la industria.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-content left">
+        <h3>2010</h3>
+        <p>En 2010, abrimos nuestras puertas a nivel internacional, llevando nuestros servicios a clientes de todo el mundo.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-redes-info">
+  
+  <div class="redes-sociales">
+    
+    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+    <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+    <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+    
+  </div>
+
+  
+</div>
+
+
+<section id="Conoce-al-profesional" style="display: none;">
+  <div class="titulo-principal">
+    <h2>Dermatólogo</h2>
+    <img src="img/foto-profesional.jpg" alt="#">
+    <div class="img-perfil">
+      <img src="img/diploma1.jpg" alt="foto profesional" />
+      <img src="img/diploma2.jpg" alt="foto profesional" />
+      <img src="img/diploma3.jpg" alt="foto profesional" />
+    </div>
+  </div>
+  <p>
+    Médico Jhon Garcia especializado en el diagnóstico, tratamiento
+    y prevención de enfermedades de la piel, cabello, uñas y mucosas, aborda problemas como el acné, dermatitis, psoriasis,
+    cáncer de piel, y realiza procedimientos estéticos y quirúrgicos para
+    mejorar la salud y apariencia de la piel.
+  </p>
+  
+</section>
+
+
+
+<main id="servicios" class="services">
+  <div class="services-content container">
+    <h2>Servicios</h2>
+    <p>Tratamiento y prevención de enfermedades de la piel, cabello, uñas y mucosas. Nuestro profesional aborda problemas como el acné, dermatitis, psoriasis, cáncer de piel, y realiza procedimientos estéticos y quirúrgicos para mejorar la salud y apariencia de la piel.</p>
+    
+    <div class="services-group">
+      <div class="service-item">
+        <div class="image-container">
+          <img src="img/piel3.png" alt="Tratamiento del Acné">
+        </div>
+        <div class="text-container">
+          <h3>Tratamiento del Acné</h3>
+          <p>Eliminación de espinillas y prevención de cicatrices para una piel saludable.</p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="image-container">
+          <img src="img/piel5.jpeg" alt="Rejuvenecimiento Facial">
+        </div>
+        <div class="text-container">
+          <h3>Rejuvenecimiento Facial</h3>
+          <p>Tratamientos no invasivos para reducir arrugas y mejorar la piel.</p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="image-container">
+          <img src="img/piel6.jpeg" alt="Detección de Cáncer de Piel">
+        </div>
+        <div class="text-container">
+          <h3>Detección Cutánea</h3>
+          <p>Exámenes completos para identificar cualquier anomalía en la piel.</p>
+        </div>
+      </div>
+    </div>
+
+    <a href="servicios-info.html" class="btn-1 btn-reducible">Más información</a>
+  </div>
+</main>
+
+    
+<!-- Sección productos -->
+<section id="productos" class="productos">
+  <div class="productos-content">
+    <h2>Productos tratamiento</h2>
+    <div class="productos-group">
+      <div class="productos-1">
+        <img src="img/acne4.jpg" alt="#">
+        <img src="img/acne4.jpg" alt="#" class="producto-img-hover">
+        <h3>Tratamiento del Acné</h3>
+        <p class="texto-hover">Productos especialmente formulados para combatir el acné, reduciendo imperfecciones y controlando la producción de grasa para una piel más saludable.</p>
+      </div>
+      <div class="productos-1">
+        <img src="img/acne4.jpg" alt="#">
+        <img src="img/acne4.jpg" alt="#" class="producto-img-hover">
+        <h3>Rejuvenecimiento Facial</h3>
+        <p class="texto-hover">Descubre productos que revitalizan tu piel, reducen líneas de expresión y devuelven luminosidad para un rostro más joven y fresco.</p>
+      </div>
+      <div class="productos-1">
+        <img src="img/acido-salicilico.webp" alt="#">
+        <img src="img/acido-salicilico.webp" alt="#" class="producto-img-hover">
+        <h3>Detección de Cáncer de Piel</h3>
+        <p class="texto-hover">Fórmulas avanzadas que protegen tu piel del daño solar y ayudan en la prevención de lesiones cutáneas asociadas al cáncer de piel utiliza con diciplina.</p>
+      </div>
+    </div>
+    <p>Nuestros productos están 100% garantizados, ofreciendo un buen resultado para que nuestros clientes queden satisfechos.</p>
+    <a href="productos.html" class="btn-1 pedir">Mas productos</a>
+
+  </div>
+</section>
+
+
+    
+<!-- Sección general -->
+<section id="medicina" class="general">
+  <div class="general-1">
+      <h2>medicina general</h2>
+      <p class="info-text">La dermatología en medicina general se enfoca en el diagnóstico, tratamiento y prevención de enfermedades de la piel, cabello, uñas y mucosas. Los dermatólogos generales abordan una amplia variedad de condiciones cutáneas, desde problemas comunes como el acné y la dermatitis hasta enfermedades más graves como el cáncer de piel. Además, realizan procedimientos estéticos y quirúrgicos para mejorar la salud y apariencia de la piel. Estos profesionales están capacitados para identificar y tratar infecciones, inflamaciones, y otras patologías cutáneas, proporcionando un enfoque integral para mantener la piel en óptimas condiciones.</p>
+      <a href="#" class="btn-1" onclick="toggleInfo(event, this)">informacion</a>
+  </div>
+  <div class="general-2"></div>
+</section>
+<section class="general">
+  <div class="general-3"></div>
+  <div class="general-1">
+      <h2>medicina alternativa</h2>
+      <p class="info-text">La dermatología integrativa o medicina alternativa combina los diagnósticos y tratamientos de la dermatología convencional con medicinas complementarias. Este enfoque holístico busca ampliar los horizontes de la dermatología tradicional, añadiendo terapias naturales y menos agresivas. Los tratamientos pueden incluir fitoterapia, acupuntura, y cambios en la dieta y estilo de vida. La dermatología integrativa aborda problemas como el estrés, la alimentación y otros desequilibrios que pueden afectar la piel, ofreciendo una visión global y personalizada para cada paciente.</p>
+      <a href="#" class="btn-1" onclick="toggleInfo(event, this)">informacion</a>
+  </div>
+</section>
+
+
+    <!-- seccion blog -->
+    <section id="blog" class="blog-container">
+      <h2>Blog</h2>
+      <p>En nuestro blog encontrarás artículos sobre la piel, consejos y buenas prácticas para mantener tu piel hermosa.</p>
+
+      <div class="blog-content">
+        <div class="blog-1">
+          <img src="img/piel7.jpeg" alt="#">
+          <h3>blog 1</h3>
+          <p>Nuestro médico Jhon Garcia especializado en el diagnóstico, tratamiento
+            y prevención de enfermedades de la piel, cabello, uñas y mucosas. <br />
+            Este profesional aborda problemas como el acné, dermatitis, psoriasis,
+            cáncer de piel, y realiza procedimientos estéticos y quirúrgicos para
+            mejorar la salud y apariencia de la piel.</p>
+        </div>
+    
+        <div class="blog-1">
+          <img src="img/piel1.jpeg" alt="#">
+          <h3>blog 2</h3>
+          <p>Nuestro médico Jhon Garcia especializado en el diagnóstico, tratamiento
+            y prevención de enfermedades de la piel, cabello, uñas y mucosas. <br />
+            Este profesional aborda problemas como el acné, dermatitis, psoriasis,
+            cáncer de piel, y realiza procedimientos estéticos y quirúrgicos para
+            mejorar la salud y apariencia de la piel.</p>
+        </div>
+    
+        <div class="blog-1">
+          <img src="img/piel6.jpeg" alt="#">
+          <h3>blog 3</h3>
+          <p>Nuestro médico Jhon Garcia especializado en el diagnóstico, tratamiento
+            y prevención de enfermedades de la piel, cabello, uñas y mucosas. <br />
+            Este profesional aborda problemas como el acné, dermatitis, psoriasis,
+            cáncer de piel, y realiza procedimientos estéticos y quirúrgicos para
+            mejorar la salud y apariencia de la piel.</p>
+        </div>
+      </div>
+    
+      <a href="#" class="btn-1">información</a>
+    </section>
+    
+
+    <footer class="footer">
+      <div class="footer-content">
+          <div class="link">
+              <h3>Enlaces Rápidos</h3>
+              <ul>
+                  <li><a href="#">Inicio</a></li>
+                  <li><a href="#">Servicios</a></li>
+                  <li><a href="#">Sobre Nosotros</a></li>
+                  <li><a href="#">Contacto</a></li>
+              </ul>
+          </div>
+  
+          <div class="link">
+              <h3>Productos</h3>
+              <ul>
+                  <li><a href="#">Producto 1</a></li>
+                  <li><a href="#">Producto 2</a></li>
+                  <li><a href="#">Producto 3</a></li>
+                  <li><a href="#">Producto 4</a></li>
+              </ul>
+          </div>
+  
+          <div class="link">
+              <h3>Recursos</h3>
+              <ul>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">FAQs</a></li>
+                  <li><a href="#">Soporte</a></li>
+                  <li><a href="#">Términos y Condiciones</a></li>
+              </ul>
+          </div>
+  
+          <div class="link">
+              <h3>Redes Sociales</h3>
+              <ul>
+                  <li><a href="#">Facebook</a></li>
+                  <li><a href="#">Twitter</a></li>
+                  <li><a href="#">Instagram</a></li>
+                  <li><a href="#">LinkedIn</a></li>
+              </ul>
+          </div>
+      </div>
+  </footer>
+  
+
+    <!-- Incluir Bootstrap JS desde CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+  </body>
+</html>

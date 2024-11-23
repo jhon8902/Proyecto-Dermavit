@@ -1,0 +1,572 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffefdc;
+    color: #333;
+  }
+  
+
+  .titulo-principal {
+    background: linear-gradient(to right, #825813, #a4712f); /* Degradado de tonos cálidos */
+    font-size: 28px; /* Tamaño de fuente mayor para hacer el título más destacado */
+    color: #ffefdc;
+    text-align: center;
+    padding: 25px 20px;
+    
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras para darle elegancia */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7); /* Sombra para darle profundidad */
+    position: relative; /* Permite agregar pseudo-elementos */
+    overflow: hidden; /* Esconde elementos desbordados */
+    margin-bottom: 1rem;
+  }
+
+  .titulo-principal h1{
+    font-weight: 400;
+  }
+  
+  /* Efecto de brillo sutil sobre el texto */
+  .titulo-principal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+    transform: skewX(-20deg);
+    transition: all 0.5s ease;
+  }
+  
+  .titulo-principal:hover::before {
+    left: 100%; /* Movimiento de izquierda a derecha */
+  }
+  
+  /* Animación suave en el hover */
+  .titulo-principal:hover {
+    background: linear-gradient(to right, #a4712f, #825813); /* Cambia el degradado en hover */
+  }
+  
+  
+/* Sección de Introducción */
+.intro {
+  background: linear-gradient(to right, #ffefdc, #fbe6cc);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.intro img {
+  width: 50%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid rgba(255, 239, 220, 0.8);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease, filter 0.3s ease;
+  opacity: 0; /* Inicia invisible para la animación */
+  animation: slideDown 1s ease forwards; /* Aplica animación */
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.intro img:hover {
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.5);
+  filter: brightness(1.1);
+}
+
+/* Contenedor de textos */
+.content-textos {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  opacity: 0; /* Inicia invisible para la animación */
+  animation: slideUp 1s ease 0.5s forwards; /* Animación con retraso */
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Estilos del título */
+.intro h1 {
+  font-size: 2rem;
+  color: #825813;
+  margin-bottom: 1rem;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.7s forwards; /* Retraso para cada elemento */
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Estilos del párrafo */
+.intro p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.9s forwards;
+}
+
+/* Estilos del botón */
+.btn-tienda {
+  margin-top: 1rem;
+  padding: 10px 25px;
+  font-size: 16px;
+  color: white;
+  background-color: #825813;
+  border: 2px solid #ffefdc;
+  border-radius: 10px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 1s ease 1.1s forwards; /* Mayor retraso */
+}
+
+.btn-tienda:hover {
+  background-color: #f7d9a5;
+  color: #825813;
+}
+
+/* Ajustes responsivos */
+@media screen and (max-width: 768px) {
+  .intro {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .intro img,
+  .content-textos {
+    width: 100%;
+  }
+
+  .intro img {
+    height: auto;
+    margin-bottom: 1rem;
+  }
+}
+  
+  /* Sección de Beneficios */
+  .beneficios {
+    padding: 2rem;
+    background-color: #ffffff;
+    background: #fcead5;
+    font-weight: none;
+  }
+  
+  .beneficios h2 {
+    text-align: center;
+    color: #825813;
+    margin-bottom: 1rem;
+    font-size: 50px;
+    font-weight: 300;
+  }
+  
+  .beneficio-lista {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .beneficio-item {
+    text-align: center;
+    margin: 1rem;
+  }
+  
+  .beneficio-item img {
+    width: 300px;
+    height: 300px;
+    margin-right: 25px; /* Espacio entre la imagen y el texto */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el efecto hover */
+    object-fit: cover; /* Asegura que la imagen se ajuste al contenedor sin distorsionarse */
+    border-radius: 10px; /* Bordes redondeados para un aspecto más atractivo */
+    cursor: pointer;
+  }
+  
+  /* Efecto hover */
+  .beneficio-item img:hover {
+    transform: scale(1.05); /* Zoom ligero */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+  }
+  
+
+  
+  .beneficio-item p {
+    font-size: 24px;
+    color: #333;
+    padding: 13px;
+  }
+  
+/* Estilos Generales de Preguntas Frecuentes */
+.faq {
+  font-family: Arial, sans-serif;
+  color: #333;
+  width: 100%;
+  margin: 0 auto;
+  background: #e3e3e3;
+  padding: 10px;
+  max-width: 1200px; /* Limita el ancho en pantallas grandes */
+}
+
+.faq h2 {
+  padding: 10px;
+  text-align: center;
+  font-size: 2.5em;
+  color: #154109;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+/* Ajustes responsivos */
+@media screen and (max-width: 768px) {
+  .faq h2 {
+    font-size: 2em;
+  }
+
+  .faq-answer {
+    flex-direction: column; /* Alineación vertical en pantallas pequeñas */
+  }
+
+  .faq-section {
+    padding: 5px; /* Espaciado reducido en pantallas pequeñas */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .faq h2 {
+    font-size: 1.8em; /* Disminuye el tamaño en pantallas muy pequeñas */
+    padding: 8px;
+  }
+
+  .faq-question {
+    font-size: 1.2em; /* Ajusta el tamaño de las preguntas */
+    padding: 8px;
+  }
+
+  .faq-section h3 {
+    font-size: 1em; /* Disminuye el tamaño del subtítulo en pantallas pequeñas */
+  }
+
+  .faq-section p {
+    font-size: 0.9em; /* Ajusta el tamaño del texto de respuesta */
+  }
+}
+
+/* Estructura de preguntas y respuestas */
+.faq-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+}
+
+.faq-question {
+  font-size: 1.4em;
+  font-weight: 300;
+  color: black;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  transition: color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question .arrow {
+  transition: transform 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #0b7cbe;
+}
+
+.faq-question.active .arrow {
+  transform: rotate(180deg);
+}
+
+/* Respuesta y animación */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  display: flex;
+  flex-wrap: wrap; /* Ajusta las secciones en líneas */
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.faq-answer.open {
+  max-height: 800px; /* Ajustable según el contenido */
+  opacity: 1;
+}
+
+.faq-section {
+  flex: 1;
+  padding: 10px;
+  min-width: 300px; /* Ancho mínimo para mantener formato en pantallas pequeñas */
+}
+
+.faq-section h3 {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #154109;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.faq-section p {
+  font-size: 1em;
+  color: black;
+  line-height: 1.8;
+}
+
+/* Animación de entrada gradual */
+.faq-answer.open .faq-section {
+  opacity: 0;
+  animation: fadeIn 0.7s forwards;
+}
+
+.faq-answer.open .faq-section:nth-child(1) { animation-delay: 0.3s; }
+.faq-answer.open .faq-section:nth-child(2) { animation-delay: 0.6s; }
+.faq-answer.open .faq-section:nth-child(3) { animation-delay: 0.8s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Función de cada propiedad:
+opacity: controla la transparencia del elemento.
+
+opacity: 0; al inicio (from) hace que el elemento sea completamente transparente.
+opacity: 1; al final (to) hace que el elemento sea totalmente visible.
+transform: translateY(10px);: controla la posición vertical del elemento.
+
+translateY(10px) mueve el elemento hacia abajo 10 píxeles desde su posición original al inicio de la animación.
+translateY(0) devuelve el elemento a su posición original al final de la animación.*/
+
+
+
+
+  
+  /* Sección de Testimonios */
+  .testimonios {
+    padding: 2rem;
+    background-color: #ffefdc;
+  }
+  
+  .testimonios h2 {
+    text-align: center;
+    color: #825813;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonio-item {
+    text-align: center;
+    margin: 1rem auto;
+    max-width: 600px;
+  }
+  
+  .testimonio-item blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #555;
+  }
+  
+  .testimonio-item p {
+    margin-top: 0.5rem;
+    color: #333;
+  }
+  
+  /* Sección de Proceso */
+  .proceso {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+    background: #ffefdc;
+  }
+  
+  .proceso h2 {
+    color: #825813;
+  }
+  
+  .paso {
+    display: inline-block;
+    width: 30%;
+    margin: 1rem;
+  }
+  
+  .paso img {
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin: 0 auto 0.5rem;
+  }
+  
+  .paso p {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Llamado a la Acción */
+  .cta {
+    text-align: center;
+    padding: 2rem;
+    background-color: #ffefdc;
+  }
+  
+  .cta button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #825813;
+    border: none;
+    margin: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .cta button:hover {
+    background-color: #b4740d;
+  }
+  
+  /* Sección de Servicios en Detalle */
+  .services {
+    padding: 2rem;
+    background-color: #825813;
+    color: #fff;
+  }
+  
+  .services-content h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #ffefdc;
+    margin-bottom: 1.5rem;
+  }
+  
+  .services-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .service-item {
+    background-color: #ffefdc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .service-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .service-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .service-info {
+    padding: 1rem;
+    color: #333;
+  }
+  
+  .service-info h3 {
+    font-size: 1.2rem;
+    color: #825813;
+    margin-top: 0;
+    text-align: center;
+  }
+  
+  .service-info p {
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+  }
+  
+  .btn-back {
+    display: inline-block;
+    margin-top: 20px;
+    color: #fff;
+    background-color: #b4740d;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-back:hover {
+    background-color: #825813;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.9rem;
+  }
+  
+  /* Media Queries para dispositivos móviles */
+  @media (max-width: 768px) {
+    .services-group {
+      grid-template-columns: 1fr;
+    }
+  
+    .beneficio-lista,
+    .faq-item,
+    .testimonios,
+    .cta,
+    .services-content {
+      text-align: center;
+    }
+  
+    .paso {
+      width: 100%;
+    }
+  }
+  

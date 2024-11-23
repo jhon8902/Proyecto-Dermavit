@@ -1,0 +1,173 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffefdc;
+    color: #333;
+}
+
+header {
+    background-color: #825813;
+    color: #ffefdc;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.galeria-productos {
+    display: flex;                /* Habilitamos Flexbox */
+    flex-wrap: wrap;              /* Permitimos que los productos se distribuyan en varias filas */
+    justify-content: center;      /* Centra los elementos dentro del contenedor */
+    align-items: center;          /* Alinea los productos verticalmente */
+    padding: 20px;
+    gap: 20px;
+    width: 100%;                  /* Asegura que el contenedor ocupe todo el ancho disponible */
+    box-sizing: border-box;
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;      /* Organiza el contenido (imagen + texto) de manera vertical */
+    justify-content: center;     /* Alinea el contenido verticalmente */
+    align-items: center;         /* Alinea el contenido horizontalmente */
+   
+  
+    border-radius: 10px;
+    padding: 15px;
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+
+    transition: transform 0.3s ease;
+}
+
+
+.producto:hover {
+    transform: scale(1.05);
+}
+
+.producto img {
+    width: 100%;                  /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: auto;                 /* Mantiene la proporción de la imagen */
+    object-fit: cover;            /* Mantiene la proporción de la imagen sin distorsionarla */
+    border-radius: 10px;
+}
+
+.producto h2 {
+    
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #825813 ;
+}
+
+.producto p {
+    
+    font-size: 0.9em;
+    margin: 0;
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .producto {
+        width: calc(50% - 20px);  /* En pantallas más pequeñas, 2 columnas */
+    }
+}
+
+@media (max-width: 480px) {
+    .producto {
+        width: 100%;              /* En pantallas muy pequeñas, 1 columna */
+    }
+}
+
+.formulario-pedido {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-pedido h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #825813;
+}
+
+.formulario-pedido label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.formulario-pedido input,
+.formulario-pedido textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.formulario-pedido button {
+    background-color: #825813;
+    color: #ffefdc;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulario-pedido button:hover {
+    background-color: #b48d5e;
+}
+
+footer {
+    background-color: #825813;
+    color: #ffefdc;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: #ffefdc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Botón de servicio y productos */
+.btn-1 {
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 14px;
+    color: #825813;
+    background-color: #ffefdc;
+    border: 2px solid #b48d5e;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-decoration: none; /* Quita el subrayado del enlace */
+}
+
+.btn-1:hover {
+    background-color: transparent;
+    color: white;
+    background: #825813;
+    text-decoration: none; /* Asegura que no se subraye al hacer hover */
+}

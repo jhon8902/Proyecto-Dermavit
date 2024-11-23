@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="productos.css">
+</head>
+<body>
+    <header>
+        <h1>Productos</h1>
+    </header>
+
+    <section class="galeria-productos">
+        <!-- Muestra aquí tus imágenes y productos -->
+        <div class="producto">
+            <img src="img/acido2.avif" alt="Producto 1">
+            <h2>Crema Hidratante</h2>
+            <p>Hidrata y suaviza la piel dejándola radiante.</p>
+        </div>
+        <div class="producto">
+            <img src="img/acido-salicilico.webp" alt="Producto 2">
+            <h2>Serum Antiarrugas</h2>
+            <p>Reduce arrugas y mejora la firmeza.</p>
+        </div>
+        <div class="producto">
+            <img src="img/acne2.jpg" alt="Producto 3">
+            <h2>Gel Limpiador</h2>
+            <p>Elimina impurezas y controla el exceso de grasa.</p>
+        </div>
+        <div class="producto">
+            <img src="img/acne4.jpg" alt="Producto 4">
+            <h2>Mascarilla Arcilla</h2>
+            <p>Purifica y limpia los poros, dejando la piel suave.</p>
+        </div>
+        <div class="producto">
+            <img src="img/acido2.jpg" alt="Producto 5">
+            <h2>Tónico Facial</h2>
+            <p>Equilibra el pH de la piel y reduce los poros.</p>
+        </div>
+        <div class="producto">
+            <img src="img/acido2.avif" alt="Producto 6">
+            <h2>Exfoliante Café</h2>
+            <p>Elimina células muertas y revitaliza la piel.</p>
+        </div>
+        <div class="producto">
+            <img src="img/acido2.avif" alt="Producto 7">
+            <h2>Aceite de Lavanda</h2>
+            <p>Relaja y calma la piel con propiedades aromáticas.</p>
+        </div>
+        <div class="producto">
+            <img src="img/acido2.avif" alt="Producto 8">
+            <h2>Bálsamo Labial</h2>
+            <p>Hidrata y protege los labios con manteca de karité.</p>
+        </div>
+        <div class="producto">
+            <img src="img/acido2.avif" alt="Producto 9">
+            <h2>Crema de Manos</h2>
+            <p>Repara y suaviza las manos secas.</p>
+        </div>
+      </div>
+      <a href="index.html" class="btn-back">Regresar Pagina Inicio</a>
+    </div>
+    </section>
+
+    <section class="formulario-pedido">
+        <h2>Realizar Pedido</h2>
+        <form action="ruta-del-servidor-para-procesar-pedido" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="producto">Producto:</label>
+            <input type="text" id="producto" name="producto" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+
+            <button type="submit">Enviar Pedido</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>O también puedes contactarnos directamente vía WhatsApp:</p>
+        <a href="https://wa.me/123456789" class="btn-1">Enviar WhatsApp</a>
+    </footer>
+</body>
+</html>

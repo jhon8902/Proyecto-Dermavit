@@ -1,0 +1,1470 @@
+
+  body, html{
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+
+  
+  
+  /* Asegurar que el header esté encima del carrusel */
+  header {
+    position: absolute; /* Cambia a absolute para colocarlo sobre el carrusel */
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center; /* Alinear verticalmente al centro */
+    justify-content: space-between; /* Espacio entre el logo y la navegación */
+    z-index: 1001; /* Asegura que el header esté por encima del carrusel */
+    width: 100%;
+    background: none; /* Elimina el background del header */
+    padding: 5px; /* Añade padding si es necesario */
+    
+}
+
+/* línea del header */
+.header-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Grosor de la línea */
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgb(251, 249, 249) 50%, rgba(255,255,255,0) 100%);
+  animation: lightEffect 2s infinite;
+}
+
+ /* icono casita de regreso */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333; /* Fondo del icono */
+  color: white; /* Color del icono */
+  padding: 10px 15px; /* Espaciado interno */
+  border-radius: 50%; /* Forma circular */
+  text-align: center; /* Centrar el texto */
+  font-size: 24px; /* Tamaño del icono */
+  z-index: 1000; /* Asegura que esté encima de otros elementos */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.scroll-to-top:hover {
+  background-color: #555; /* Cambio de color en hover */
+}
+
+
+.menu-container h1 {
+    font-size: 40px;
+    color:#ffefdc;
+    font-family: 'QanoarPersonalUse', sans-serif;
+    border-radius: 10px;
+    padding: 5px 15px;
+    animation: dropDown 2s ease-out;
+    transition: color 0.3s ease, transform 0.3s ease; /* Añadir transición */
+    cursor: pointer;
+    background-color: #825813;
+}
+
+.menu-container h1 span {
+    display: block;
+    font-size: 0.3em;
+    color: #ffefdc;
+    text-align: center;
+    margin-top: -5px;
+    cursor: pointer;
+}
+
+.menu-container:hover,
+.menu-container:hover h1 span {
+    color: #ffefdc; /* Cambio de color de texto en hover */
+    transition: color 0.3s ease; /* Transición para el color del span */
+}
+
+.menu-container:hover {
+    transform: scale(1.05); /* Escala al hacer hover sobre el contenedor */
+   
+    border-radius: 25px;
+}
+
+
+
+
+
+/* animaciones menu hamburguesa */
+
+@keyframes lightEffect {
+  0% {
+      background-position: -100%;
+  }
+  100% {
+      background-position: 100%;
+  }
+}
+
+  
+  @keyframes dropDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Estilos para dispositivos móviles para menu hamburguesa */
+@media (max-width: 1024px) {
+  .menu-container  {
+    display: flex;
+   }
+ 
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #0f5132;
+    font-size: 10px;
+    width: 100%;
+    padding: 5px;
+   
+  }
+
+  .hamburger-menu {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 4px 0;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* permite que la lista se muestre */
+  .nav-menu.active {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-menu ul {
+    flex-direction: row;
+    padding: 25px;
+  }
+
+  .nav-menu ul li {
+    margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu-container h1 {
+    font-size: 25px;
+   }
+
+   .nav-menu ul {
+    flex-direction: column;
+    padding: 5px;
+  }
+
+}
+
+
+
+
+   /* Estilo para la navegación */
+   nav {
+    padding: 10px 25px; /* Espaciado alrededor */
+    border-radius: 20px; /* Bordes redondeados */
+    font-size: 16px;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin-left: 35px; /* Espaciado entre los elementos */
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    font-family: 'QanoarPersonalUse', sans-serif;
+    transition: all 0.3s ease;
+    padding: 15px 20px;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  nav ul li a:hover {
+    color: #e2e20b;
+    transform: scale(1.1);
+    border-radius: 25px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+  }
+
+  
+
+  /* Estilos para el carrusel y el overlay */
+.carousel-item {
+  position: relative; /* Asegura que el overlay se posicione correctamente dentro del carrusel */
+  z-index: 1; /* Añadido para asegurar que el carrusel esté por debajo del modal */
+}
+
+.carousel-item img {
+  width: 100%; /* Asegurarse de que ocupe todo el ancho */
+  height: 620px; /* Mantener la proporción de la imagen */
+  object-fit: cover; /* Llenar el contenedor manteniendo el aspecto, pero sin deformar */
+  display: block; /* Asegura que no haya espacios en blanco debajo de la imagen */
+}
+
+.carousel-item::before {
+  content: ""; /* Crea un pseudo-elemento vacío */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente oscuro */
+  z-index: 2; /* Asegura que el overlay del carrusel esté por encima de la imagen */
+}
+
+/* Para los controles de navegación */
+.carousel-control-prev,
+.carousel-control-next {
+  cursor: pointer;
+  color: #232323;
+  z-index: 10; /* Asegura que los controles se mantengan visibles sobre el carrusel */
+}
+
+/* Reposiciona los indicadores del carrusel hacia arriba */
+.carousel-indicators {
+  top: 550px; /* Mueve las líneas desde la parte superior */
+  bottom: auto; /* Desactiva el posicionamiento por defecto desde abajo */
+}
+
+/* Para ajustar el tamaño y el espaciado de los indicadores (opcional) */
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  margin: 5px; /* Ajusta el espacio entre los botones de indicador */
+}
+
+/*CONTENEDOR TEXTOS PORTADA*/
+.contenedor-textos {
+  font-family: 'Segoe UI', sans-serif;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20; /* Asegura que el texto esté por encima del carrusel */
+  text-align: center;
+  width: 100%;
+  opacity: 0; 
+  animation: fadeIn 2s forwards;
+}
+
+/* ANIMACION PARA TODO EL CONTENDOR-TEXTOS */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.contenedor-textos h5 {
+  color: #fcfbfb; /* Cambia el color del texto */
+  padding: 10px; /* Añade un poco de espacio alrededor del texto */
+  font-size: 50px; /* Tamaño de fuente para el título */
+  line-height: 80px;
+  text-transform: uppercase;
+}
+
+.contenedor-textos p {
+  color: #e4e3e3; /* Cambia el color del texto */
+  padding: 0 250px; /* Añade un poco de espacio alrededor del texto */
+  font-size: 24px; /* Tamaño de fuente para la descripción */
+  text-align: center; /* Alinea el texto a ambos lados */
+}
+
+/* Media Queries .contenedor-textos para tablets */
+@media screen and (max-width: 1024px) {
+  .contenedor-textos h5 {
+    font-size: 40px; /* Ajusta el tamaño de fuente para tablets */
+    line-height: 60px;
+  }
+
+  .contenedor-textos {
+    top: 55%;
+  }
+
+  .contenedor-textos p {
+    font-size: 20px; /* Ajusta el tamaño de fuente para tablets */
+    padding: 0 150px; /* Reduce el padding para tablets */
+  }
+}
+
+/* Media Queries contenedor de textos móviles */
+@media screen and (max-width: 768px) {
+  .contenedor-textos h5 {
+    font-size: 30px; /* Ajusta el tamaño de fuente para móviles */
+    line-height: 40px;
+  }
+
+  .contenedor-textos p {
+    font-size: 16px; /* Ajusta el tamaño de fuente para móviles */
+    padding: 0 50px; /* Reduce el padding para móviles */
+  }
+}
+
+/* Estilos personalizados para btn-primary */
+.btn-primary {
+  color: #fff !important; /* Fuerza el color blanco */
+  background-color: #825813 !important; /* Aplica el color de fondo correcto */
+  border-color: #825813 !important; /* Aplica el color del borde */
+  text-transform: uppercase;
+  border-radius: 50px !important;
+}
+
+.btn-primary:hover {
+  color: black !important; /* Fuerza el color blanco al hacer hover */
+  background-color: #ffefdc !important; /* Aplica el color de fondo en hover */
+  border-color: #ffefdc !important; /* Aplica el color del borde en hover */
+}
+
+/* Estilos personalizados para btn-secondary */
+.btn-secondary {
+  color: black !important; /* Fuerza el color blanco */
+  background-color: #ffefdc !important; /* Aplica el mismo color de fondo que el btn-primary */
+  border-color: #ffefdc !important; /* Aplica el mismo color de borde que el btn-primary */
+  text-transform: uppercase;
+  border-radius: 50px !important;
+}
+
+.btn-secondary:hover {
+  color: white !important; /* Fuerza el color blanco al hacer hover */
+  background-color: #825813 !important; /* Aplica el mismo color de fondo en hover que el btn-primary */
+  border-color: #825813 !important; /* Aplica el mismo color de borde en hover */
+}
+
+/* Estilos para el carrusel y el overlay */
+.carousel-item {
+  position: relative; /* Asegura que el overlay se posicione correctamente dentro del carrusel */
+  z-index: 1; /* Añadido para asegurar que el carrusel esté por debajo del modal */
+}
+
+.carousel-item img {
+  width: 100%; /* Asegurarse de que ocupe todo el ancho */
+  height: 620px; /* Mantener la proporción de la imagen */
+  object-fit: cover; /* Llenar el contenedor manteniendo el aspecto, pero sin deformar */
+  display: block; /* Asegura que no haya espacios en blanco debajo de la imagen */
+}
+
+.carousel-item::before {
+  content: ""; /* Crea un pseudo-elemento vacío */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente oscuro */
+  z-index: 2; /* Asegura que el overlay del carrusel esté por encima de la imagen */
+}
+
+/* Para los controles de navegación */
+.carousel-control-prev,
+.carousel-control-next {
+  cursor: pointer;
+  color: #232323;
+  z-index: 10; /* Asegura que los controles se mantengan visibles sobre el carrusel */
+}
+
+/* Reposiciona los indicadores del carrusel hacia arriba */
+.carousel-indicators {
+  top: 550px; /* Mueve las líneas desde la parte superior */
+  bottom: auto; /* Desactiva el posicionamiento por defecto desde abajo */
+}
+
+/* Para ajustar el tamaño y el espaciado de los indicadores (opcional) */
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  margin: 5px; /* Ajusta el espacio entre los botones de indicador */
+}
+
+/* CONTENEDOR TEXTOS PORTADA */
+.contenedor-textos {
+  font-family: 'Segoe UI', sans-serif;
+  position: absolute;
+  top: 30%; /* Centramos verticalmente */
+  left: 0; /* Centramos horizontalmente */
+  transform: translate(-50%, -50%); /* Asegura que se mantenga centrado */
+  align-content: center; /* Centra el texto */
+  width: 100%; /* Asegura que el contenedor del texto ocupe todo el ancho */
+  opacity: 0; /* Inicialmente escondido */
+  animation: fadeIn 2s forwards; /* Añade animación de entrada */
+}
+
+/* ANIMACION PARA TODO EL CONTENDOR-TEXTOS */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.contenedor-textos h5 {
+  color: #fcfbfb; /* Cambia el color del texto */
+  padding: 10px; /* Añade un poco de espacio alrededor del texto */
+  font-size: 50px; /* Tamaño de fuente para el título */
+  line-height: 80px;
+  text-transform: uppercase;
+}
+
+.contenedor-textos p {
+  color: #e4e3e3; /* Cambia el color del texto */
+  padding: 0 50px; /* Añade un poco de espacio alrededor del texto */
+  font-size: 24px; /* Tamaño de fuente para la descripción */
+  text-align: center; /* Alinea el texto a ambos lados */
+}
+
+/* Media Queries .contenedor-textos para tablets */
+@media screen and (max-width: 1024px) {
+  .contenedor-textos h5 {
+    font-size: 40px; /* Ajusta el tamaño de fuente para tablets */
+    line-height: 60px;
+  }
+
+  .contenedor-textos {
+    top: 30%;
+  }
+
+  .contenedor-textos p {
+    font-size: 20px; /* Ajusta el tamaño de fuente para tablets */
+    padding: 0 100px; /* Reduce el padding para tablets */
+  }
+}
+
+/* Media Queries contenedor de textos móviles */
+@media screen and (max-width: 768px) {
+  .contenedor-textos h5 {
+    font-size: 30px; /* Ajusta el tamaño de fuente para móviles */
+    line-height: 40px;
+  }
+
+  .contenedor-textos p {
+    font-size: 16px; /* Ajusta el tamaño de fuente para móviles */
+    padding: 0 30px; /* Reduce el padding para móviles */
+  }
+}
+
+/* Estilos personalizados para btn-primary */
+.btn-primary {
+  color: #fff !important; /* Fuerza el color blanco */
+  background-color: #825813 !important; /* Aplica el color de fondo correcto */
+  border-color: #825813 !important; /* Aplica el color del borde */
+  text-transform: uppercase;
+  border-radius: 50px !important;
+  margin-top: 20px; /* Separar de los textos */
+}
+
+.btn-primary:hover {
+  color: black !important; /* Fuerza el color blanco al hacer hover */
+  background-color: #ffefdc !important; /* Aplica el color de fondo en hover */
+  border-color: #ffefdc !important; /* Aplica el color del borde en hover */
+}
+
+/* Estilos personalizados para btn-secondary */
+.btn-secondary {
+  color: black !important; /* Fuerza el color blanco */
+  background-color: #ffefdc !important; /* Aplica el mismo color de fondo que el btn-primary */
+  border-color: #ffefdc !important; /* Aplica el mismo color de borde que el btn-primary */
+  text-transform: uppercase;
+  border-radius: 50px !important;
+  margin-top: 20px; /* Separar de los textos */
+}
+
+.btn-secondary:hover {
+  color: white !important; /* Fuerza el color blanco al hacer hover */
+  background-color: #825813 !important; /* Aplica el mismo color de fondo en hover que el btn-primary */
+  border-color: #825813 !important; /* Aplica el mismo color de borde en hover */
+}
+
+
+/* Estilo para el modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999; /* Este z-index asegura que el modal esté por encima de otros elementos, pero debajo del carrusel */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+  padding-top: 60px;
+  text-align: center;
+  animation: fadeIn 0.5s forwards;
+}
+
+/* Estilo del contenido del modal */
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 60%; /* Ajusta el tamaño del formulario */
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-50px); /* Inicialmente fuera de la pantalla */
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0); /* Se desplaza suavemente hacia su posición */
+  }
+}
+
+/* Clases adicionales para la animación de visibilidad */
+.modal.mostrar {
+  display: block;
+}
+
+/* Estilo para cerrar el modal */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Div para mostrar número de contacto */
+#contactoInfo {
+  text-align: center;
+  font-size: 18px;
+}
+
+/* Estilos para mostrar el número de contacto */
+#contactoInfo {
+  display: none; /* Inicialmente está oculto */
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  width: 80%; /* Ajuste para pantallas móviles */
+}
+
+/* Estilo para el botón de cerrar */
+.close-contact {
+  background-color: #ff0000; /* Rojo para el botón de cierre */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.close-contact:hover {
+  background-color: #cc0000;
+}
+
+
+
+
+/* Estilos para el contenido oculto */
+.content-section {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+/* Estilos para las imágenes y texto dentro del contenido */
+.content-section img {
+  max-width: 100%;
+  height: auto;
+}
+
+.content-section h2 {
+  margin-top: 0;
+}
+
+/* Sección de Historia */
+
+/* Estilo para ocultar la sección de Historia al desplazarse */
+
+#historia-content {
+  text-align: center;
+  background-color: #ffefdc;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+#historia-content.hidden {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+
+#historia-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #825813;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.timeline-item {
+  padding: 2rem 0;
+  position: relative;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #825813;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.timeline-item .timeline-content {
+  padding: 2rem;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  width: 45%;
+}
+
+.timeline-content.left {
+  left: 0;
+}
+
+.timeline-content.right {
+  left: 55%;
+}
+
+.timeline-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #825813;
+}
+
+.timeline-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .timeline-item .timeline-content {
+    left: 0 !important;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Ajustar la línea en dispositivos móviles */
+  .timeline-item::after {
+    left: 10%; /* Cambia su posición en móvil */
+    height: 20%; /* Ajusta la altura para evitar que ocupe todo el contenido */
+    
+  }
+}
+
+
+
+
+/*redes sociales*/
+
+
+.redes-sociales {
+  display: flex;
+  gap: 55px; /* Espacio entre íconos */
+  justify-content:center;
+  background: #ffefdc;
+  padding: 25px;
+}
+
+.redes-sociales a {
+  font-size: 1.7em;
+  padding: 5px;
+  transition: color 0.3s ease; /* Efecto hover */
+}
+
+.redes-sociales a:hover {
+  color: #25D366, #3b5998, #E1306C ; /* Cambia de color al hacer hover */
+}
+
+.whatsapp {
+  color: black; /* Color específico para WhatsApp */
+}
+
+.whatsapp:hover {
+  color: #25D366; /* Color más oscuro en hover */
+}
+
+.facebook {
+  color: black; /* Color específico para Facebook */
+}
+
+.facebook:hover {
+  color: #3b5998; /* Color más oscuro en hover */
+}
+
+.instagram {
+  color: black; /* Color específico para Instagram */
+}
+
+.instagram:hover {
+  color: #E1306C; /* Color más oscuro en hover */
+}
+
+
+
+
+
+/* Contenedor principal del perfil profesional */
+#Conoce-al-profesional {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 columnas para tener mayor control sobre el diseño */
+  grid-auto-rows: minmax(100px, auto); /* Las filas se adaptan al contenido */
+  gap: 20px;
+  padding: 40px;
+  margin: 0 auto;
+  background: #825813;
+  width: 90vw;
+  max-width: 1200px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  opacity: 0;
+  visibility: hidden; /* Evita que se interactúe con la sección mientras está oculta */
+  transition: opacity 0.5s ease-in-out, visibility 0s 0.5s; /* La visibilidad cambia después de la transición de opacidad */
+}
+
+/* Imagen principal alineada y ocupando varias columnas */
+#Conoce-al-profesional .img-principal {
+  grid-column: 1 / span 6; /* La imagen ocupará las primeras 6 columnas */
+  grid-row: 1 / span 2; /* Ocupará las primeras 2 filas para hacerla más alta */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título principal que va al lado de la imagen */
+.titulo-principal {
+  grid-column: 7 / span 6; /* Ocupará las columnas de la 7 a la 12 */
+  grid-row: 1; /* Se alinea a la primera fila */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+/* Estilos para el título */
+.titulo-principal h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Párrafo que aparece debajo del título */
+#Conoce-al-profesional p {
+  grid-column: 7 / span 6;
+  grid-row: 2; /* Va debajo del título, ocupando la segunda fila */
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: justify;
+  max-width: 100%;
+}
+
+/* Contenedor de las imágenes de perfil, colocado debajo de la imagen principal */
+.img-perfil {
+  grid-column: 1 / span 12; /* Ocupará todo el ancho del contenedor */
+  grid-row: 3; /* Aparecerá en la tercera fila, debajo de todo */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.img-perfil img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Responsivo para tablets */
+@media (max-width: 768px) {
+  #Conoce-al-profesional {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  #Conoce-al-profesional img {
+      max-width: 80%;
+      margin-bottom: 20px;
+  }
+
+  .img-perfil img {
+      max-width: 70px;
+  }
+}
+
+/* Responsivo para móviles conoce al profesional */
+@media (max-width: 480px) {
+  #Conoce-al-profesional img {
+      max-width: 100%;
+  }
+
+  .img-perfil img {
+      max-width: 50px;
+  }
+}
+
+/* Sección de servicios */
+.services {
+  padding: 100px 0;
+  background-color: #825813;
+  background-image: linear-gradient(62deg, #825813 50%, #b4740d 100%);
+  
+}
+
+.services-content {
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.services-content h2 {
+  font-size: 36px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  animation: fadeInDown 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.services-content p {
+  color: #ffefdc;
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+  animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Diseño de los items */
+.services-group {
+  display: grid;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+
+.service-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(255, 239, 220, 0.9); /* Fondo ligeramente transparente */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+}
+
+.service-item:hover {
+  transform: translateY(-5px); /* Efecto hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra en hover */
+}
+
+.image-container {
+  border-radius: 55px;
+}
+
+.image-container,
+.text-container {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.text-container {
+  padding: 20px;
+}
+
+.service-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  
+}
+
+/* Animación de servicio */
+.service-item {
+  opacity: 0;
+  transform: translateY(20px); /* Entrada desde abajo */
+  transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1), opacity 1s ease;
+}
+
+.service-item.visible {
+  opacity: 1;
+  transform: translateY(0); /* Posición final */
+}
+
+/* Animación para .text-container y .image-container */
+.text-container,
+.image-container {
+  opacity: 0;
+  transform: translateY(50%);
+  transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1), opacity 1s ease;
+}
+
+.visible .text-container,
+.visible .image-container {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estilo de títulos y párrafos */
+.service-item h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #825813;
+}
+
+.service-item p {
+  font-size: 16px;
+  color: #825813;
+}
+
+/* Estilos del botón */
+.btn-1 {
+  display: inline-flex; /* Cambiado a inline-flex para centrar el ícono */
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  padding: 12px 30px;
+  font-size: 16px;
+  color: #825813;
+  background-color: rgba(255, 239, 220, 0.8); /* Fondo con transparencia */
+  border: 2px solid #ffefdc;
+  border-radius: 25px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.btn-1:hover {
+  background-color: #ffefdc;
+  color: #825813;
+}
+
+/* Estilos para el botón reducible */
+.btn-reducible.clicked {
+  padding: 10px 20px; /* Reduce el padding */
+  color: white;
+  background-color: #34c759; /* Color de fondo para indicar éxito */
+  border-color: #34c759; /* Cambia el color del borde */
+}
+
+.btn-reducible .icon-check {
+  margin-left: 10px; /* Espacio entre texto e ícono */
+}
+
+.btn-reducible.clicked .icon-check {
+  display: inline;
+}
+
+.btn-reducible.clicked::before {
+  content: ''; /* Oculta el texto */
+  width: 0;
+  overflow: hidden;
+}
+
+.btn-reducible.clicked span.hidden {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease; /* Transición suave para la opacidad */
+}
+
+
+/* Media Queries para ajuste en dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .services-group {
+    grid-template-columns: 1fr;
+  }
+
+  .service-item {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .image-container,
+  .text-container {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+
+
+/* Sección productos */
+.productos {
+  background-color: #ffefdc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 50px 0;
+  cursor: pointer;
+}
+
+.productos-content {
+  text-align: center;
+}
+
+.productos-content h2 {
+  font-size: 30px;
+  font-weight: 200;
+  line-height: 70px;
+  color: #825813;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  background: rgba(0, 0, 0, 0.1); /* Fondo semitransparente oscuro */
+}
+
+.productos-content h3 {
+  font-size: 20px;
+  font-weight: 200;
+  padding: 5px;
+  color: #825813;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+ 
+}
+
+.productos-content p {
+  font-size: 10px;
+  font-weight: 100;
+  color: #825813;
+  margin-bottom: 50px;
+  padding: 0 100px;
+}
+
+.productos-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  gap: 10px;
+  overflow: hidden; /* Oculta el desbordamiento */
+  flex-direction: row;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas si es necesario */
+}
+
+.productos-1 {
+  position: relative;
+  text-align: center;
+  padding: 15px;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+  max-width: 100%; /* Asegura que el contenedor no exceda el ancho de la pantalla */
+  flex: 1 1 calc(33.333% - 20px); /* Ajusta el tamaño de los elementos para que se distribuyan en tres columnas */
+  box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total del elemento */
+}
+
+.productos-1:hover {
+  background-color: #e0e0e0; /* Cambia el color de fondo al hacer hover */
+}
+
+.productos-1 img {
+  width: 100%; /* Asegura que las imágenes no excedan el tamaño del contenedor */
+  max-width: 250px; /* Establece un tamaño máximo para las imágenes */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 10px;
+  transition: opacity 0.6s ease, transform 0.3s ease; /* Añade una transición suave para la opacidad y la transformación */
+  object-fit: cover; /* Ajusta la imagen para que cubra el espacio sin distorsionarse */
+}
+
+.productos-1 .producto-img-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%; /* Asegura que la imagen de hover tenga el mismo tamaño que la imagen principal */
+  height: 100%; /* Asegura que la imagen de hover tenga el mismo tamaño que la imagen principal */
+  opacity: 0; /* Oculta la imagen alternativa por defecto */
+}
+
+.productos-1:hover .producto-img {
+  opacity: 0; /* Oculta la imagen principal al hacer hover */
+
+}
+
+.productos-1:hover .producto-img-hover {
+  opacity: 1; /* Muestra la imagen alternativa al hacer hover */
+  
+}
+
+.texto-hover {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  position: absolute; /* posiciona el elemento encima de la imagen */
+  text-align: center;
+  bottom: 0; /* Ubicación final del texto en el contenedor */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translate(-50%, 100%); /* Inicia desplazado hacia abajo */
+  padding: 5px 10px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  opacity: 0; /* Invisible por defecto */
+  transition: transform 0.6s ease, opacity 0.6s ease; /* Transición más lenta y suave */
+  height: 175%; /* Altura para ocupar el 50% de la imagen */
+  background-color: rgba(58, 58, 58, 0.7); /* Fondo semitransparente para destacar */
+}
+
+.productos-1:hover .texto-hover {
+  transform: translate(-50%, 50%); /* Mueve el texto a su posición final */
+  opacity: 1; /* Se hace visible */
+  color: white;
+  font-size: 20px;
+  padding: 90px;
+  border-radius: 10px;
+}
+
+
+  .pedir {
+    display: flex;
+    justify-content: center;
+    text-decoration: none; /* Quita el subrayado */
+  }
+  
+  /* Botón de servicio y productos */
+  .btn-1 {
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 14px;
+    color: #825813;
+    background-color: #ffefdc;
+    border: 2px solid #b48d5e;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-decoration: none; /* Quita el subrayado del enlace */
+  }
+  
+  .btn-1:hover {
+    background-color: transparent;
+    color: white;
+    background: #825813;
+    text-decoration: none; /* Asegura que no se subraye al hacer hover */
+  }
+  
+
+
+
+/* Media Queries para la seccion de productos*/
+@media screen and (max-width: 1024px) {
+    .productos-content h2 {
+        font-size: 45px;
+        line-height: 60px;
+    }
+
+    .productos-content p {
+        padding: 0 50px;
+    }
+
+    .productos-group {
+        flex-direction: column;
+    }
+
+    .productos-1 {
+        padding: 20px 0;
+    }
+
+    .productos-1 img {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .productos-content h2 {
+        font-size: 35px;
+        line-height: 50px;
+    }
+
+    .productos-content p {
+        padding: 0 20px;
+    }
+
+    .productos-1 img {
+        width: 100%;
+    }
+}
+
+/*inicio css general*/
+.general {
+  display: flex;
+}
+
+.general-1 {
+  width: 50%;
+  padding: 100px 250px 100px 100px;
+  background-color: #825813;
+}
+
+.general-2 {
+  background-image: url(img/piel5.jpeg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+  height: auto;
+}
+
+.general-3 {
+  background-image: url(img/medicina-alternativa.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+  height: auto;
+}
+
+.general-1 h2 {
+  font-size: 55px;
+  line-height: 70px;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.general-1 p {
+  font-size: 16px;
+  color: #ffefdc;
+  margin: 25px 0 45px 0;
+}
+
+.info-text {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.info-text.visible {
+  display: block;
+  opacity: 1;
+}
+
+/* Media Queries para medicina general  */
+@media screen and (max-width: 1024px) {
+  .general {
+      flex-direction: column;
+  }
+  .general-1, .general-2, .general-3 {
+      width: 100%;
+      padding: 50px;
+  }
+  .general-1 h2 {
+      font-size: 45px;
+      line-height: 60px;
+  }
+  .general-1 p {
+      font-size: 14px;
+  }
+  .general-1, .general-2{
+    height: 300px;
+  }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .general {
+        flex-direction: column;
+    }
+    .general-2 {
+        order: -1; /* Coloca la imagen .general-2 antes del texto y título */
+        width: 100%;
+        padding: 20px;
+    }
+    .general-1, .general-3 {
+        width: 100%;
+        padding: 20px;
+        height: 300px;
+    }
+    .general-1 h2 {
+        font-size: 25px;
+        line-height: 45px;
+    }
+    .general-1 p {
+        font-size: 12px;
+    }
+  }
+
+/*inicio css blog*/
+
+.blog-container{
+
+  padding: 100px 0;
+  background: #ffefdc;
+  text-align: center;
+}
+
+.blog-container h2, p{
+  color: black;
+}
+
+.blog-content{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+}
+
+.blog-1{
+  padding: 15px 20px;
+}
+
+.blog-1 img{
+  width: 350px;
+  height: 250px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.blog-1 h3{
+  font-size: 25px;
+  color: black;
+}
+
+/*seccion del footer*/
+.footer {
+  padding: 100px 0;
+  background-color: #825813;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.link h3 {
+  font-size: 18px;
+  color: #ffefdc;
+  margin-bottom: 15px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.link ul {
+  list-style-type: none; /* Elimina los puntos de las listas */
+  padding: 10px; /* Elimina el padding predeterminado */
+}
+
+.link li {
+  margin-bottom: 10px; /* Espacio entre los elementos de la lista */
+}
+
+.link a {
+  font-size: 16px;
+  color: #ffefdc; /* Cambié el color para que sea visible sobre el fondo oscuro */
+  display: block;
+  margin-bottom: 15px;
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+
+.link a:hover {
+  color: #ffd700; /* Color al pasar el cursor */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
